@@ -1,0 +1,20 @@
+introduzione
+    accesso piattafora skillfactory (skillbook)
+
+cos'è un algoritmo
+
+chart flow
+    sintassi
+        rettangolo - istruzione
+        parallelogramma - input/output
+        rombo - condizioni
+
+    operatori
+        +-*/
+
+    regole di assegnazione
+        a = 5   ->  assegno ad 'a' il valore 5
+                    le operazioni di assegnazione si leggono da destra a sinistra
+                    sappi che quello che sta a destra, sarà inscatolato in quello che sta a sinistra
+
+    
