@@ -4,17 +4,32 @@ introduzione
 cos'è un algoritmo
 
 chart flow
-    sintassi
-        rettangolo - istruzione
-        parallelogramma - input/output
-        rombo - condizioni
+    strutture di controllo
+        rettangolo      - istruzione sequenziale 
+        parallelogramma - input/output                      (leggi/stampa xxx)
+        rombo           - istruzione condizionale/cicliche  (if else - switch/ while - for )
 
     operatori
-        +-*/
+        operatori matematici            : + - * /   (addizione, sottrazione, moltiplicazione, divisione)
+        operatori di concatenazione     : +         ("m"+"amma")
+        operatore resto                 : %         ( 10%2 è 0, il resto della divisione 10/2 è 0)
+
 
     regole di assegnazione
         a = 5   ->  assegno ad 'a' il valore 5
                     le operazioni di assegnazione si leggono da destra a sinistra
                     sappi che quello che sta a destra, sarà inscatolato in quello che sta a sinistra
 
-    
+    tipi di dati
+        interi      -   numeri naturali         : -1 0 +1 ... 
+        decimali    -   numeri con la virgola   : 0.1 1.2 99.9999
+        stringhe    -   parole                  : "mamma"
+        boolean     -   valori di verità        : True False
+
+python
+    creazione file python:  nomeFile.py
+
+    esempi di utilizzo:     assegnazione di stringhe e stampa (controlla file /prova.py)
+
+
+
