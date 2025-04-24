@@ -4,10 +4,13 @@ introduzione
 cos'è un algoritmo
 
 chart flow
+
     strutture di controllo
-        rettangolo      - istruzione sequenziale 
-        parallelogramma - input/output                      (leggi/stampa xxx)
-        rombo           - istruzione condizionale/cicliche  (if else - switch/ while - for )
+        inizio              - cerchio "start"
+            rettangolo      - istruzione sequenziale 
+            parallelogramma - input/output                      (xxx = inserisci/ stampa xxx)
+            rombo           - istruzione condizionale/cicliche  (if else - switch/ while - for )
+        fine                - cerchio "fine"
 
     operatori
         operatori matematici            : + - * /   (addizione, sottrazione, moltiplicazione, divisione)
@@ -30,6 +33,4 @@ python
     creazione file python:  nomeFile.py
 
     esempi di utilizzo:     assegnazione di stringhe e stampa (controlla file /prova.py)
-
-
 
