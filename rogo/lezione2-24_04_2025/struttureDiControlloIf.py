@@ -36,7 +36,7 @@ if x3 != "error":
 # input("previ invio per contnuare...")
 """
 
-# direttiva 2: 
+# direttiva 2: stampa "maggiorenne" o "minorenne" in base all'età della persona
 
 nome = input("inserisci il tuo nome:\n")
 eta = int(input("inserisci la tua eta:\n"))
