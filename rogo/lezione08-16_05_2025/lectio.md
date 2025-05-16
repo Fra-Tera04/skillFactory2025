@@ -85,6 +85,19 @@ Da quì abbiamo che l'_inizio_ e lo _step_ è opzionale. La variable _x_ è auto
 
 Diamo uno sguardo alla sintassi del _for_ con qualche test -> [tests](./test_for.py)
 
+#### Altri
+
+Per ogni esercizio dichiarare una funzione col rispettivo algoritmo:
+
+1. Contare da 1 a 10 ma stampando i varo tra 3 e 7 (escluso);
+2. Contare da 12 a 24 mostrando in output i valori minore di 17 e maggiorni di 22 (17 e 22 compresi);
+3. Contare da 10 a 1 stampando solo i numeri pari;
+4. Contare da 20 a 40 stampando solo i numeri dispari;
+5. Contare da 27 a 55 ma stampare quanti numeri parsi sono stati trovati;
+
+- [Esercizi di Logica](./logica_rogo.py)
+
+<!--
 This sentence uses `$` delimiters to show math inline: $\sqrt{3x-1}+(1+x)^2$
 
 **The Cauchy-Schwarz Inequality:**
@@ -98,3 +111,5 @@ $$
 ```mermaid
 
 ```
+
+-->

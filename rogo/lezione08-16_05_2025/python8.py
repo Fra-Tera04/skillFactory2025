@@ -21,16 +21,6 @@ def conta_2():
             print(inizio)
         inizio-=1
 
-def conta_3():
-    conta = 
-    fine = 15
-
-    while inizio > fine:
-        if inizio > 16 and inizio <= 27:
-            print(inizio)
-        inizio-=1
-
 
 #conta_1()
 #conta_2()
-conta_3()
