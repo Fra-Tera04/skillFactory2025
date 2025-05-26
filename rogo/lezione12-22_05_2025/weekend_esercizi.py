@@ -87,8 +87,23 @@ def next_color(colore):
 def stampa_colore(colore):
     print(f"Il colore del semaforo ora è {colore}\n")
 
+
 # stampa_colore(next_color(input("\nDi che colore è ora il semaforo? (verde-giallo-rosso)\n")))
 
+
+semaforo=["verde", "giallo", "rosso"]
+def next_coso(colore):
+    lunghezza = len(semaforo)
+    ret = colore + " non è un colore disponibile"
+    for x in range(0,lunghezza):
+        if colore == semaforo[x]:
+            ret = semaforo[(x+1)%lunghezza]
+            break
+
+    return ret
+
+
+#stampa_colore(next_coso("v"))
 
 
 # 5)Hai un prezzo originale e una percentuale di sconto. Vuoi calcolare il prezzo finale scontato, e poi mostrare quanto hai risparmiato.
@@ -102,4 +117,4 @@ def calcola_sconto(prezzo_articolo, percentuale_sconto):
 def mostra_risparmio(prezzo_iniziale, prezzo_scontato):
     print(f"Hai risparmiato esattamente {prezzo_iniziale-prezzo_scontato}")
 
-mostra_risparmio(100,calcola_sconto(100,.5))
+#mostra_risparmio(100,calcola_sconto(100,.5))
