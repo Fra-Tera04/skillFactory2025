@@ -12,6 +12,7 @@
 2. [Ripetizione](#ripetizione-esercizi)
    1. [Il penultimo Python](#il-penultimo-python)
    2. [L'ultimo Python](#lultimo-python)
+   3. [NodeJS](#installiamo-node-js)
 
 ## Linguaggi
 
@@ -94,3 +95,5 @@ L'esercizio ha dimostrato un errore inaspettato legato alla rimozione di un elem
 ### L'ultimo Python
 
 E ora un esercizio in solitaria...
+
+## Installiamo Node JS
