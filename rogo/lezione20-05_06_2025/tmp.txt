@@ -1,0 +1,1 @@
+16:01:54	INSERT IGNORE INTO prodotto(nome_prodotto, prezzo, quantita, data_produzione, descrizione, descrizione,id_categoria,id_marca)  VALUES ('scarpa SX', 14, 7, '2025-05-19', '02 questa è una desrizon 02', 2,2)	Error Code: 1110. Column 'descrizione' specified twice	0.000 sec
