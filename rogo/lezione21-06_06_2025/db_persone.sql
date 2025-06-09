@@ -32,7 +32,8 @@ CREATE TABLE IF NOT EXISTS persone_titoli_di_studio(
     FOREIGN KEY (id_titolo_di_studio) REFERENCES titoli_di_studio(id)
 );
 
-CREATE VIEW vista_1(id_persona_a, id_persona_b, titolo_di_studio) AS
-SELECT * FROM persone_a, persone_b, persone_titoli_di_studio;
+CREATE VIEW vista_1(nome_a, nome_b, titolo_di_studio) AS
+SELECT pa.nome, pb.nome, pt.titolo 
+FROM persone_a AS pa JOIN persone_b AS pb, persone_titoli_di_studio AS pt;
 
 
