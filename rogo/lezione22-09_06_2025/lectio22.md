@@ -79,34 +79,33 @@ $\text{SELECT * FROM studenti WHERE anni}$
 
 ### La Normalizzazione
 
-è il lavoro nel quale si distinguono i principianti e i pro, si tratta di una pratica per portare i dati in possesso a uno stato di ordine standardizzato
+E' il lavoro nel quale si distinguono i principianti e i pro, si tratta di una pratica per portare i dati in possesso a uno stato di ordine standardizzato
 
 ### Regole
 
-#### regole di gino
+#### Regole di Gino
 
 1. Ogni tabella deve avere un campo o un insieme di campi che rappresentano univocamente una riga
-2. eliminare i campi ridondanti, o sotto forma di dato tipizzato o sottoforma di dato calcolato
+   - Una soluzione è usare una **Chiave Primaria Surrogata**
+2. Eliminare i campi ridondanti, o sotto forma di dato tipizzato o sottoforma di dato calcolato
+3. Eliminare i campi calcolati, dove il valore puù essere derivato dalle informaizoni a disposizione nelle altre colonne
 
-#### regole delle forme normali
+#### Regole delle Forme Normali
 
-1. ogni campo deve contenere valori atomici (no campi con valori multipli o liste). (1NF)
-2. ogni attributo non chiave deve dipendere completamente dalla chiave. (2NF)
-3. ogni attributo non chiave deve dipendere solo dalla chiave primaria e non da altri attributi non chiave (no dipendenze transitive). (3NF)
+1. Ogni campo deve contenere valori atomici (no campi con valori multipli o liste). (1NF)
 
-## Esercizio
+2. Ogni attributo non chiave deve dipendere completamente dalla chiave. (2NF)
 
-#### dati i dati...
+3. Ogni attributo non chiave deve dipendere solo dalla chiave priaria e non da altri attributi non chiave (no dipendenze transitive). (3NF)
 
-$
-\text{nome | cogmome | luogo\_di\_nascita | data\_di\_nascita | sesso | CF | Titolo\_di\_studio | contatto | tipo\_contatto eta}
-$
+4. ...
 
-mario sorrsi roma 09/11/2000 m x diploma xxx f 36
-mirko morisi asti 01/5/2001 f x laurea xxx l 13
-mario sessa siena 12/2/2003 m x master xxx m 76
-matteo distefano napoli 10/03/1995 f x laurea xxx f 3
-matteo distefano viterbo 10/03/1998 f x laurea xxx f 98
+## Esercizi
+
+#### Dati i dati...
+
+| nome | cogmome | luogo di nascita | data di nascita | sesso | CF  | Titolo di studio | contatto | tipo contatto | eta |
+| :--: | :-----: | :--------------: | :-------------: | :---: | :-: | :--------------: | :------: | :-----------: | --: |
 
 #### Dati questi dati...
 
@@ -114,7 +113,7 @@ matteo distefano viterbo 10/03/1998 f x laurea xxx f 98
 
 ### discernimento - normalizzazione
 
-COnsiderando un'autput significativo fornito dal committente, si rivela che il titolo e il
+Considerando un'autput significativo fornito dal committente, si rivela che il titolo e il
 
 ### tabelle narmalizzate
 
@@ -126,9 +125,6 @@ COnsiderando un'autput significativo fornito dal committente, si rivela che il t
   luogo di nascita
   data di nascita
   sesso
-  id_persona
-  id_persona
-
 - Titoli_di_Studio
   id
   titolo
@@ -136,6 +132,10 @@ COnsiderando un'autput significativo fornito dal committente, si rivela che il t
 - Contatti
   id
   contatto
-  tipo contatto
+  tipo_contatto
 
-SELECT FLOOR(DATEDIFF(CURDATE(), ...)/365);
+FLOOR(DATEDIFF(CURDATE(), ...)/365);
+
+persona1 Ntitolo
+cross_p_tds
+personaN 1titolo
