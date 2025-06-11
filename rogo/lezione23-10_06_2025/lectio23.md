@@ -62,12 +62,14 @@ cosa si puo fare?
 
 <summary>wip</summary>
 
-$
-|nome|cogmome|luogo di nascita|data di nascita|sesso|CF|Titolo di studio|contatto|tipo contatto|eta
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|---:|
-$
+## Tabella MD
+
+| nome | cogmome | luogo di nascita | data di nascita | sesso | CF  | Titolo di studio | contatto | tipo contatto | eta |
+| :--: | :-----: | :--------------: | :-------------: | :---: | :-: | :--------------: | :------: | :-----------: | --: |
 
 ---
+
+## Tabella latex
 
 $$
 \begin{aligned}
@@ -84,11 +86,15 @@ $$
 
 ---
 
+## Tabella Programma
+
+$$
+
 \begin{table}[!ht]
 \centering
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
 \hline
-\textbf{} & \textbf{} & \textbf{} & \textbf{} & \textbf{} & \textbf{} & \textbf{} & \textbf{} & \textbf{} & \textbf{} \\ \hline
+\textbf{a} & \textbf{a} & \textbf{a} & \textbf{a} & \textbf{a} & \textbf{a} & \textbf{a} & \textbf{a} & \textbf{a} & \textbf{a} \\ \hline
 ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\
 ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\
 ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\
@@ -97,14 +103,19 @@ $$
 ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\
 ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\
 ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\
-~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\
+
+\hline
+
 \end{tabular}
 \caption{complimenti}
 \end{table}
+$$
 
 ---
 
 $$
+
 \begin{aligned}
 & \text {Table 1.1. A Jupyter notebook table using LaTeX }\\
 &
@@ -124,6 +135,11 @@ $$
 
 \end{array}
 \end{aligned}
+
+
 $$
 
 </details>
+
+$$
+$$
