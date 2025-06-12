@@ -56,8 +56,6 @@ cosa si puo fare?
 
 ---
 
----
-
 <details>
 
 <summary>wip</summary>
