@@ -9,7 +9,7 @@ cartella_eclipse/*/*.settings
 cartella_eclipse/*/bin/*
 
 *.class
-*.project
+.project
 .classpath
 .settings/
 
