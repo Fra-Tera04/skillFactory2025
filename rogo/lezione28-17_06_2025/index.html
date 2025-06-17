@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="it" xml:lang="it">
+  <head>
+    <meta character="UTF-8" />
+    <meta name="viewport" content="wifth=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="fogliuno.css" />
+    <!-- 
+    <style>
+      body {
+        background-color: rgb(10, 10, 10);
+        color: whitesmoke;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      label {
+        color: white;
+      } 
+    -->
+    </style>
+    <script src="main.js"></script>
+    <title>Prima Pagina</title>
+  </head>
+
+  <body>
+    <form action="">
+      <div>
+        <label for="nome">nome</label>
+        <input type="text" id="nome" placeholder="iniserisci nome" required />
+      </div>
+      <div>
+        <label for="cognome">cognome</label>
+        <input type="text" id="cognome" placeholder="iniserisci cognome" />
+      </div>
+      <div>
+        <label>data</label>
+        <input type="date" />
+      </div>
+      <div>
+        <label>psw</label>
+        <input type="password" id="psw" placeholder="iniserisci psw" />
+      </div>
+      <div>
+        <select>
+          <option value="-" selected>-- sceglio --</option>
+          <option value="M">maschio</option>
+          <option value="F">femmina</option>
+          <option value="A">altro</option>
+        </select>
+      </div>
+      <div>
+        <label>
+          <label>titolo di studio:</label>
+          <input type="radio" name="scelta" value="diploma" checked /> diploma
+          <input type="radio" name="scelta" value="laurea" /> laurea
+          <input type="radio" name="scelta" value="master" /> master
+        </label>
+      </div>
+      <div>
+        <label> animali domestici</label>
+        <input type="checkbox" name="accetto" /> Cane
+        <input type="checkbox" name="accetto" /> <b>Gato</b>
+        <input type="checkbox" name="accetto" /> <b>Pitone</b>
+        <input type="checkbox" name="accetto" />mostro
+      </div>
+
+      <div>
+        <textarea placeholder="scrivi qualcosa" maxlength="300"></textarea
+        ><br />
+      </div>
+      <div><input type="checkbox" name="accetto" /> Accetto le condizioni</div>
+      <br />
+      <hr />
+      <div>
+        <button>submit</button>
+      </div>
+    </form>
+
+    <div>
+        <table>
+            <!--table raw -->
+            <!--riga dei campi-->
+        <tr>
+            <!--table header -->
+            <th>id</th>
+            <th>nome</th>
+            <th>cognome</th>
+        </tr>
+        <tr>
+            <!--table data -->
+            <td>1</td>
+            <td>gigi</td>
+            <td>righi</td>
+        </tr>
+        <tr>          
+            <td>2</td>
+            <td>pippa</td>
+            <td>pippa</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>sposso</td>
+            <td>franco</td>
+        </tr>
+        </table>
+    </div>
+
+    <div>
+        <!--ordered list -->
+        <ol type="I">
+            <!--ordered item -->
+            <li>Pasta barilla</li>                
+            <li>Intimo godzilla</li>
+            <li>monaco iashin</li>
+        </ol>
+    </div>
+  </body>
+</html>
