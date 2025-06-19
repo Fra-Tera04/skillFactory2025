@@ -5,7 +5,7 @@ mamp-project/
 cartella_eclipse/*.gitignore
 
 cartella_eclipse/.metadata
-cartella_eclipse/*/*.settings
+cartella_eclipse/*/.settings/
 cartella_eclipse/*/bin/*
 
 *.class
@@ -17,4 +17,3 @@ bin/
 target/
 
 *.log
-
