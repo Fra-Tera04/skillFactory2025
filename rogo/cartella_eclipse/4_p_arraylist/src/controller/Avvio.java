@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import model.Esercizi24_06;
 import model.Persona;
 import java.math.BigDecimal;
 
@@ -13,6 +14,9 @@ public class Avvio {
 
 	public static void main(String[] args) {
 
+		Esercizi24_06 e = new Esercizi24_06();
+		
+		/*
 		List<Persona> arr = new ArrayList<>();
 		
 		Persona p1 = new Persona("cf_marmorc€","marco","moro",2300.7f);
@@ -40,6 +44,23 @@ public class Avvio {
 		
 		for (Entry<String,Persona> p : arrH.entrySet()) 
 			System.out.println(p.getValue());
+		
+		List<Integer> arrr = new ArrayList<>();
+		System.out.println(e.es1(arrr));
+		HashMap<String,String> map = new HashMap<>();
+		
+		e.es2(map);
+		
+		for (Map.Entry<String, String> entry : map.entrySet()) {
+			String key = entry.getKey();
+			String val = entry.getValue();
+			
+			System.out.println("Key: "+key+" - Value: "+val);	
+		}
+	*/
+		List<String> arr = new ArrayList<>();
+		e.es14(arr);
+		
 		
 	}
 }
