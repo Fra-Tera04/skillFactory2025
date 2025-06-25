@@ -16,8 +16,6 @@ public class Avvio {
 		
 		int scelta;
 		boolean continuare = true;
-
-		
 	
 		do 
 		{	
@@ -33,7 +31,10 @@ public class Avvio {
 				
 				case 2 -> input.stampa(crud.readAll());
 				
-				case 3 -> 
+				case 3 -> input.statistiche();
+				
+				case 4 -> input.remove();
+				
 				case 99 -> continuare = false;
 				
 				default -> {System.out.println("Errore nella scelta, riprova per piacere");} 

@@ -1,7 +1,5 @@
 package es2;
 
-import java.time.LocalDate;
-
 public class Persona {
 
 	private String nome;
@@ -28,7 +26,7 @@ public class Persona {
 	
 	@Override
 	public String toString() {
-		return "Persona [ cf=" + cf + " nome=" + nome + ", cognome=" + cognome + ", citta=" + citta + ", eta=" + eta
+		return "Persona = [ cf=" + cf + " nome=" + nome + ", cognome=" + cognome + ", citta=" + citta + ", eta=" + eta
 				+ "]";
 	}
 	

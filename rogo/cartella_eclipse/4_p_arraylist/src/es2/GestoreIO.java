@@ -47,12 +47,16 @@ public class GestoreIO {
 	}
 	
 
+	public void stampa()
+	{
+		crud.readAll().forEach(System.out::println);
+	}
+	
 	public void stampa(Collection<Persona> list)
 	{
 		list.forEach(System.out::println);
 	}
 	
-
 	public void stampa(String massage)
 	{
 		System.out.println(massage);
@@ -116,18 +120,28 @@ public class GestoreIO {
 							.average()
 							.orElse(0.0);
 		
-		long nPersone = s.count();
+		int nPersoneInserite = CrudService.getId();
+		
+		long nPersoneRimosse = nPersoneInserite - s.count();  
 		
 		
-		// numero persone inserite forse posso usare l'opzione static id sai.
-		
-		// numero persone rimosse è una sottrazione... id - last id
-		
+		System.out.println("Le statistiche delle Persone in:");
+		System.out.println("Media degli anni\tNumero Persone Inserite\tNumero Persone Rimosse");
+		System.out.println("%.2f \t\t%d \t\t%d".formatted(mediaAnni,nPersoneInserite,nPersoneRimosse));
 		
 		
 		
 		
 	}
 	
-	
+	public boolean remove()
+	{
+		
+		stampa("Rimuovi una Peronsa:");
+		String cf = leggiS("Inserisci il CF della Persona: ");
+		
+		return crud.remove(cf);
+		
+		
+	}
 }
