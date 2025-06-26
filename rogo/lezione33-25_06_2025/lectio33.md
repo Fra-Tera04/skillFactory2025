@@ -4,7 +4,7 @@
 
 1. [Progetto mattutino](#progetto-mattutino)
 2. [Ereditarietà](#ereditarietà)
-3. [Interfaccie](#interfacce)
+3. [Classi Astratte](#classi-astratte)
 
 ## Progetto Mattutino
 
@@ -55,5 +55,3 @@ Come si vede dal ClassDiagram la classe Animal è padre delle classi Duck Fish e
 ## Classi Astratte
 
 `public abstarc class Animale{}` in Java si usa per rappresentare un'astrazione di una classe che non può essere istanziabile ma tramanda delle caratteristiche e dei comportamenti
-
-## Interfacce
