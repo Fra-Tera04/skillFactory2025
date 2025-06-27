@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+import model.Auto;
 import model.Veicolo;
 
 public class RepositoryForMap implements Repository {
@@ -29,14 +30,27 @@ public class RepositoryForMap implements Repository {
 	
 	@Override
 	public Collection<Veicolo> readAll(){
-		return map.values();}
+		return map.values();
+	}
 	
 	@Override
-	public void update(){ System.out.println("non implementato");}
+	public Veicolo update(Veicolo v){
+		
+		Veicolo ret = null;
+		
+		try {
+			ret = map.replace(v.getTarga(), v);
+		} catch (Exception e) {
+			e.printStackTrace();
+			ret = new Auto();
+		}
+		
+		return ret;
+	}
 	
 	@Override
-	public void delete(Veicolo v) {
-		map.remove(v.getTarga());
+	public Veicolo delete(Veicolo v) {
+		return map.remove(v.getTarga());
 	}
 }
 

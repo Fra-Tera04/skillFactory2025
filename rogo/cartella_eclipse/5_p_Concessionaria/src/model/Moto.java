@@ -3,7 +3,14 @@ package model;
 public class Moto extends Veicolo {
 
 	private String stileManubrio;
-	
+
+
+	public Moto() 
+	{
+		super(null, null, null, null);
+		this.setStileManubrio(null);	
+	}
+
 	public Moto(String targa, String modello, String marca, String colore, String stileManubrio) {
 		super(targa, modello, marca, colore);
 		this.setStileManubrio(stileManubrio);
@@ -17,6 +24,6 @@ public class Moto extends Veicolo {
 		this.stileManubrio = stileManubrio;
 	}
 
-	
-	
+
+
 }

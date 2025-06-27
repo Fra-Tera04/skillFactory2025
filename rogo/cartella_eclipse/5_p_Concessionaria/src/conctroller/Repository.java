@@ -1,7 +1,6 @@
 package conctroller;
 
 import java.util.Collection;
-import java.util.Map;
 
 import model.Veicolo;
 
@@ -13,8 +12,8 @@ public interface Repository {
 
 	Collection<Veicolo> readAll();
 
-	void update();
+	Veicolo update(Veicolo v);
 
-	void delete(Veicolo v);
+	Veicolo delete(Veicolo v);
 
 }

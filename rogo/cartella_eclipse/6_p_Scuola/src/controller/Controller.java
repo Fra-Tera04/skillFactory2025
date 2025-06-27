@@ -1,19 +1,20 @@
-package conctroller;
+package controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import conctroller.Repository;
+import conctroller.RepositoryForMap;
+import model.Persona;
 import model.Veicolo;
 import view.GestioneIO;
 import view.IGestioneIO;
 
 public class Controller {
 
-	
-	public void sos()
-	{
+	public static void main(String[] args) {
+
 		IGestioneIO input = new GestioneIO();
-		Repository crud = new RepositoryForMap();
+		ICrud crud = new Crud();
 		
 		int scelta;
 		boolean continuare = true;
@@ -21,16 +22,17 @@ public class Controller {
 		do 
 		{	
 			input.menu();
-			scelta = input.leggiInt("Inserisci la tua scelta");
+			scelta = input.leggiIntero("Inserisci la tua scelta");
 
 			switch ( scelta ) {
 
 				case 1 -> { 
-					Veicolo v = input.formVeicolo();
-					crud.insert(v);
+					Persona p = new Persona();
+					input.formPersona(p);
+					crud.inserisci(p);
 				} 
 				
-				case 2 -> input.schedaVeicoli(crud.readAll());
+				case 2 -> input.schedaPersona(null);
 				
 				case 3 -> {
 					String targa = input.leggiString("Inserisci la targa del veicolo");
@@ -54,4 +56,7 @@ public class Controller {
 		
 		input.addio();
 	}
+
+	}
+
 }

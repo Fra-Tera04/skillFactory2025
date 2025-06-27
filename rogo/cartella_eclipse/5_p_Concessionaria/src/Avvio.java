@@ -7,7 +7,7 @@ public class Avvio {
 		
 		Controller c = new Controller();
 		
-		
+		c.sos();
 	}
 
 }

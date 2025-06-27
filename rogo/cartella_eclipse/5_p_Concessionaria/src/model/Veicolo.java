@@ -19,6 +19,7 @@ public abstract class Veicolo {
 	{
 		
 	}
+	
 	public void stop() {}
 	public void run() {}
 	public void spegni() {}

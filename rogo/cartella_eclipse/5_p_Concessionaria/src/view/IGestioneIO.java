@@ -93,5 +93,11 @@ public interface IGestioneIO {
      * Questo metodo è tipicamente usato per presentare un elenco di azioni che l'utente può scegliere.
      */
     public void menu();
+
+	public void addio();
+
+	public Veicolo formModificaVeicolo();
+
+	public Veicolo formDeleteVeicolo();
     
 }

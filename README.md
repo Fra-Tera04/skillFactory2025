@@ -9,10 +9,12 @@ Il corso segue una fase di **Formazione** e una di **Tirocinio**.
   - **Avvicinamento alla programmazione** tramite:
 
     1. Schemi di Control Flow
-    2. Basi della programmazione tramite Python 3, Node.js
+    2. Basi della programmazione tramite Python 3, Node.js, Java
     3. Sviluppo di pagine web HTML-CSS con introduzione a Bootstrap
 
   - Con **Esercitazioni** tramite laboratori per testare e consolidare le competenze acquisite.
+
+    - Le erciatazioni sono svolte tramite la creazione di gestionali
 
 - **Il Tirocinio** si concentra su:
 
