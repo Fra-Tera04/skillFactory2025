@@ -1,23 +1,20 @@
 package view;
 
-import java.sql.Date;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Scanner;
 
-import controller.Crud;
-import model.Contratto;
-import model.Docente;
+import controller.RepositoryNoDB;
 import model.Persona;
-import model.Studente;
 
-public class GestioneIO implements IGestioneIO {
+public class GestoreIO {
 
-	Crud repo;
+	
+
+	RepositoryNoDB repo;
 	Scanner s;
 
 
@@ -50,11 +47,11 @@ public class GestioneIO implements IGestioneIO {
 
 
 	public GestioneIO() {
-		repo = new Crud();
+		repo = new RepositoryNoDB();
 		s = new Scanner(System.in);
 	}
 	
-	@Override
+	
 	public LocalDate leggiData(String messaggio) {
 		
 		
@@ -82,19 +79,19 @@ public class GestioneIO implements IGestioneIO {
 		return data;
 	}
 
-	@Override
+	
 	public String leggiStringa(String m) {
 		System.out.print(m + CYAN + " -> " + RESET);
 		return s.nextLine();
 	}
 
-	@Override
+	
 	public int leggiIntero(String m) {
 		System.out.print(m + CYAN + " -> " + RESET);
 		return Integer.parseInt(s.nextLine());
 	}
 
-	@Override
+	
 	public double leggiDecimale(String m) {
 		System.out.print(m + CYAN + " -> " + RESET);
 		return Double.parseDouble(s.nextLine());
@@ -104,7 +101,7 @@ public class GestioneIO implements IGestioneIO {
 		System.out.println(m);
 	}
 
-	@Override
+	
 	public void formPersona(Persona p) {
 		
 		System.out.println(GREEN + BOLD + "-------------" + RESET);
@@ -131,12 +128,10 @@ public class GestioneIO implements IGestioneIO {
 		
 				if( aaa == 1 )	
 				{
-					p = formStudente(p);
 					continuare = false;
 				}
 				else if( aaa == 2 )
 				{
-					p = formDocente(p);
 					continuare = false;
 				}
 				else
@@ -154,43 +149,6 @@ public class GestioneIO implements IGestioneIO {
 		
 	}
 	
-	private Docente formDocente(Persona p) {
-		
-		stampa(GREEN + "\t----------------------------" + RESET);
-		stampa(GREEN + "\tForm Docente " + RESET);
-		stampa(GREEN + "\t----------------------------" + RESET);
-		
-		String sdr = leggiStringa("\tInserisci la Tua Scuola di Riferimento");
-		Contratto c = leggiContratto();
-
-		double stipendio = leggiIntero("\tInserisci il tuo Stipendio");
-		
-		String materia = leggiStringa("\tInserisci la Tua Materia");
-		
-		String classe = leggiStringa("\tInserisci la Classe che controlli");
-		
-		Docente d = new Docente(p.cf, p.nome, p.cognome, p.dataDiNascita, sdr,
-				c, stipendio, materia, classe);
-		
-		return d;
-	}
-
-	public Contratto leggiContratto()
-	{
-		stampa(GREEN + "\t\t----------------------------" + RESET);
-		stampa(GREEN + "\t\tLista di Contratti possibili"+ RESET);
-		stampa(GREEN + "\t\t----------------------------" + RESET);
-		stampa("\t\t"+ Contratto.values().toString());
-			
-		return Contratto.valueOf(s.nextLine());
-	}
-
-	private Studente formStudente(Persona p) {
-		
-		return new Studente(p.cf, p.nome, p.cognome, p.dataDiNascita, new LinkedHashMap<String, List<Double>>());
-	}
-
-	@Override
 	public void schedaPersona(Persona p) {
 		
 		// da sovrascrivere
@@ -198,12 +156,11 @@ public class GestioneIO implements IGestioneIO {
 		
 	}
 
-	@Override
+	
 	public void visualizzaPersone(List<Persona> persone) {
 		persone.forEach( p -> schedaPersona(p));
 	}
 
-	@Override
 	public void menu() {
 
 		System.out.println(GREEN + BOLD + "-------------------------------------------------" + RESET);
@@ -251,5 +208,6 @@ public class GestioneIO implements IGestioneIO {
 		System.out.println(YELLOW + BOLD + "| " + "Ti ringraziamo per aver usato Il Nostro Servizio" + RESET + GREEN + BOLD + " |" + RESET);
 		System.out.println(GREEN + BOLD + "--------------------------------------" + RESET);
 	}
+
 
 }

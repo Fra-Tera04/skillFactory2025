@@ -1,6 +1,5 @@
 package view;
 
-import java.sql.Date;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -25,5 +24,7 @@ public void schedaPersona(Persona p);
 public void visualizzaPersone(List<Persona> persone);
 
 public void menu();
+
+public void addio();
 
 }

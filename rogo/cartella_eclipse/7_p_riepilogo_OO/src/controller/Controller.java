@@ -1,17 +1,14 @@
 package controller;
 
-import java.util.List;
-
 import model.Persona;
-import view.GestioneIO;
-import view.IGestioneIO;
+import view.GestoreIO;
 
 public class Controller {
 
 	public static void main(String[] args) {
 
-		IGestioneIO input = new GestioneIO();
-		ICrud crud = new Crud();
+		GestoreIO input = new GestoreIO();
+		RepositoryNoDB repo = new RepositoryNoDB();
 
 		int scelta;
 		boolean continuare = true;
@@ -26,7 +23,7 @@ public class Controller {
 			case 1 -> { 
 				Persona p = new Persona();
 				input.formPersona(p);
-				crud.inserisci(p);
+				repo.inserisci(p);
 
 			} 
 
@@ -35,7 +32,7 @@ public class Controller {
 			case 3 -> {
 				String cf = input.leggiStringa("Inserisci il cf della persona");
 
-				input.schedaPersona( crud.leggi(cf));
+				input.schedaPersona( repo.leggi(cf));
 				//input.schedaVeicolo(targa);
 			}
 			case 4 -> input.formPersona(null);
@@ -54,5 +51,3 @@ public class Controller {
 	}
 
 }
-
-
