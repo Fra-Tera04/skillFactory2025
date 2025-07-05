@@ -1,5 +1,6 @@
 package view;
 
+import java.sql.Date;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -7,14 +8,16 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Scanner;
 
-import controller.RepositoryNoDB;
+import model.Dipendente;
 import model.Persona;
+import model.Sesso;
+import repository.RepositoryMySql;
 
 public class GestoreIO {
 
 	
 
-	RepositoryNoDB repo;
+	RepositoryMySql repo;
 	Scanner s;
 
 
@@ -46,24 +49,22 @@ public class GestoreIO {
 	private static final String RESET = "\u001b[0m";
 
 
-	public GestioneIO() {
-		repo = new RepositoryNoDB();
+	public GestoreIO() {
+		repo = new RepositoryMySql();
 		s = new Scanner(System.in);
 	}
 	
 	
-	public LocalDate leggiData(String messaggio) {
-		
-		
+	public Date leggiData(String messaggio) {
 		
 		LocalDate data = null;
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		System.out.println(messaggio);
 		
         try {
-    
-        	String inputUtente = s.nextLine(); // Legge l'intera riga di input	
-        	data = LocalDate.parse(inputUtente, formatter);
         	
+        	String inputUtente = s.nextLine(); // Legge l'intera riga di input	
+        	data = LocalDate.parse(inputUtente, formatter);	
             
         } catch (DateTimeParseException e) {
         	
@@ -76,7 +77,7 @@ public class GestoreIO {
         	e.printStackTrace();
         }
 		
-		return data;
+		return Date.valueOf(data);
 	}
 
 	
@@ -102,7 +103,7 @@ public class GestoreIO {
 	}
 
 	
-	public void formPersona(Persona p) {
+	public Persona formDipendente() {
 		
 		System.out.println(GREEN + BOLD + "-------------" + RESET);
 		System.out.println(GREEN + BOLD + "| " + UNDERLINE + "Form Persona" + RESET + GREEN + BOLD + " |" + RESET);
@@ -111,42 +112,13 @@ public class GestoreIO {
 		String cf = leggiStringa("Inserisci il CF");
 		String nome = leggiStringa("Inserisci il Nome");
 		String cognome = leggiStringa("Inserisci il Cognome");
-		LocalDate dataDiNascita = leggiData("Inserisci la tua Data di Nascita (dd/MM/yyyy)");
+		Date dataDiNascita = leggiData("Inserisci la tua Data di Nascita (dd/MM/yyyy)");
+		Sesso secs = Sesso.valueOf(leggiStringa("Inserisci il tuo sesso (maschio/femmina/altro)").toUpperCase());
+		String luogoDiNascita = leggiStringa("Inserisci il tuo Luogo di Nascita");
+		int stip = leggiIntero("Inserisci lo Stipendio");
 		
-		p.setCF(cf);
-		p.setNome(nome);
-		p.setCognome(cognome);
-		p.setDataDiNascita(dataDiNascita);
-		
-		boolean continuare = true;	
-		
-		try {
-			
-			do {
-				
-				int aaa = leggiIntero("Sei uno Studente(1) o un Docente(2)");
-		
-				if( aaa == 1 )	
-				{
-					continuare = false;
-				}
-				else if( aaa == 2 )
-				{
-					continuare = false;
-				}
-				else
-					stampa(RED + "Errore, Clicca invio per Ripetere il Form..." + RESET);
-					
-				leggiStringa("");
-			}while( continuare );
-			
-		}
-		catch (Exception e) {
-			e.printStackTrace();
-			
-		}
 		System.out.println(GREEN + BOLD + "--------------------------------------" + RESET);
-		
+		return new Dipendente(cf, nome, cognome, dataDiNascita, luogoDiNascita, secs, stip); 	
 	}
 	
 	public void schedaPersona(Persona p) {
@@ -167,11 +139,9 @@ public class GestoreIO {
 		System.out.println(GREEN + BOLD + "| " + UNDERLINE + "Gestione Qualcosa Qualocsa - Menu Principale" + RESET + GREEN + BOLD + " |" + RESET);
 		System.out.println(GREEN + BOLD + "-------------------------------------------------" + RESET);
 
-		System.out.println(YELLOW + "1. " + RESET + "Inserisci un nuova Persona");
-		System.out.println(YELLOW + "2. " + RESET + "Visualizza tutti i veicoli");
-		System.out.println(YELLOW + "3. " + RESET + "Cerca veicolo per targa");
-		System.out.println(YELLOW + "4. " + RESET + "Aggiorna dati veicolo");
-		System.out.println(YELLOW + "5. " + RESET + "Elimina veicolo");
+		System.out.println(YELLOW + "1. " + RESET + "Inserisci un nuovo Dipendente");
+		System.out.println(YELLOW + "2. " + RESET + "Visualizza tutti");
+		System.out.println(YELLOW + "5. " + RESET + "Elimina");
 		// System.out.println(BLUE + "6. " + RESET + "Mostra statistiche"); // Opzione speciale
 		System.out.println(YELLOW + "99. " + RESET + "Esci dall'applicazione");
 
@@ -192,7 +162,7 @@ public class GestoreIO {
 			String risposta = leggiStringa(BG_WHITE + BOLD + BLACK + "Sei sicuro di voler cancellare questa Persona?" + RESET);
 		
 			if( risposta.toLowerCase().equals("si"))
-				repo.elimina(cf);
+				repo.delete(cf);
 		}
 		else
 			stampa("La Persona (" + cf + ") non è stata trovata");
