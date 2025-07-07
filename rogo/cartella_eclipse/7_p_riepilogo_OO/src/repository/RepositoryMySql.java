@@ -2,7 +2,9 @@ package repository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import model.Dipendente;
@@ -60,13 +62,24 @@ public class RepositoryMySql implements  IRepository{
 		
 		String sqlUpdate = "SELECT * FROM dipendenti;";
 		
+		List<Persona> list = new ArrayList<>();
+		
 		try {
 
 			Connection c = ConnessioneDB.getConnectionMySql();
 
 			PreparedStatement ps = c.prepareStatement(sqlUpdate);
 
-			ps.execute();
+			ResultSet rs = ps.executeQuery();
+			
+			while( rs.next() )
+			{
+				list.add(null);
+				
+				
+				
+			}
+			
 
 		} catch (SQLException e) {
 			e.printStackTrace();
