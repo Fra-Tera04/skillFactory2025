@@ -1,12 +1,12 @@
-# # Lezione 42 del 08/07/2025
+# Lezione 42 del 08/07/2025
 
 ## Indice
 
 1. [Recap](#recap)
-2. [Frameworks](#frameworks)
-3. [WEB-APP](#app-web)
-   1. [Introduzione](#introduzione)
-   2. [REST API](#rest)
+2. [Frameworks](#pomeriggio)
+   1. [Hibernate](#connessione-al-db-con-hiberniate)
+   2. [JPA](#uso-degli-jpa)
+   3. [REST APP](#implementazione-di-una-restful-api)
 
 ## Recap
 

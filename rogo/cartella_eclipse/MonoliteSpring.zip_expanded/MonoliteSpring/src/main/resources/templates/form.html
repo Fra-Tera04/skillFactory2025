@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form di Contatto Elegante</title>
+    <style>
+      /* Stili generali per il body e il font */
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f0f2f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 20px;
+        box-sizing: border-box; /* Include padding nel calcolo della larghezza/altezza */
+      }
+
+      /* Stili per il contenitore principale del form */
+      .form-container {
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 500px;
+        box-sizing: border-box;
+      }
+
+      /* Stili per il titolo del form */
+      .form-container h2 {
+        text-align: center;
+        color: #333333;
+        margin-bottom: 30px;
+        font-size: 2.2em;
+        font-weight: 600;
+      }
+
+      /* Stili per i gruppi di input (label + input/textarea) */
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      /* Stili per le label */
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        color: #555555;
+        font-weight: 500;
+        font-size: 0.95em;
+      }
+
+      /* Stili per gli input di testo, email, password e textarea */
+      .form-group input[type="text"],
+      .form-group input[type="email"],
+      .form-group input[type="password"],
+      .form-group textarea {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid #cccccc;
+        border-radius: 8px;
+        font-size: 1em;
+        color: #333333;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        box-sizing: border-box; /* Importante per width: 100% con padding */
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus {
+        border-color: #007bff; /* Colore del bordo al focus */
+        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Ombra al focus */
+        outline: none; /* Rimuove l'outline predefinito del browser */
+      }
+
+      .form-group textarea {
+        resize: vertical; /* Permette il ridimensionamento solo verticale */
+        min-height: 100px;
+      }
+
+      /* Stili per il pulsante di submit */
+      .form-group button {
+        width: 100%;
+        padding: 15px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1em;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        letter-spacing: 0.5px;
+      }
+
+      .form-group button:hover {
+        background-color: #0056b3; /* Colore più scuro al hover */
+        transform: translateY(-2px); /* Leggero sollevamento al hover */
+      }
+
+      .form-group button:active {
+        transform: translateY(0); /* Ritorna alla posizione normale al click */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">     
+      <h2>Contattami</h2>
+      
+      <form action="/recu" method="post">
+      
+        <div class="form-group">
+          <label for="name">Surnome:</label>
+          <input type="text" name="nome" placeholder="nome" />
+        </div>
+
+        <div class="form-group">
+          <label >cognome:</label>
+          <input type="text" name="cognome" placeholder="cognome" />
+        </div>
+
+        <div class="form-group">
+          <label >CF:</label>
+          <input type="text" name="cf" placeholder="cf" />
+        </div>
+
+        <div class="form-group">
+          <button type="submit">Invia Messaggio</button>
+        </div>
+      </form>
+      
+    </div>
+  </body>
+</html>

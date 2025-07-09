@@ -51,7 +51,7 @@ public class GestoreRichieste {
 	public String recU(Utente u)
 	{		
 		repoUtente.save(u);
-		return "ok";
+		return "/home";
 	}
 	
 	@DeleteMapping("/deleteu")
