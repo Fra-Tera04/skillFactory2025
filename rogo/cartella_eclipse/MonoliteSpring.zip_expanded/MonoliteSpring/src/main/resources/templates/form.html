@@ -1,135 +1,189 @@
 <!DOCTYPE html>
 <html lang="it">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Form di Contatto Elegante</title>
-    <style>
-      /* Stili generali per il body e il font */
-      body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background-color: #f0f2f5;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        margin: 0;
-        padding: 20px;
-        box-sizing: border-box; /* Include padding nel calcolo della larghezza/altezza */
-      }
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Form di Contatto Elegante</title>
+<style>
+/* Stili generali per il body e il font */
+body {
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	background-color: #f0f2f5;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	margin: 0;
+	padding: 20px;
+	box-sizing: border-box;
+	/* Include padding nel calcolo della larghezza/altezza */
+}
 
-      /* Stili per il contenitore principale del form */
-      .form-container {
-        background-color: #ffffff;
-        padding: 40px;
-        border-radius: 12px;
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-        width: 100%;
-        max-width: 500px;
-        box-sizing: border-box;
-      }
+/* Stili per il contenitore principale del form */
+.form-container {
+	background-color: #ffffff;
+	padding: 40px;
+	border-radius: 12px;
+	box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+	width: 100%;
+	max-width: 500px;
+	box-sizing: border-box;
+}
 
-      /* Stili per il titolo del form */
-      .form-container h2 {
-        text-align: center;
-        color: #333333;
-        margin-bottom: 30px;
-        font-size: 2.2em;
-        font-weight: 600;
-      }
+/* Stili per il titolo del form */
+.form-container h2 {
+	text-align: center;
+	color: #333333;
+	margin-bottom: 30px;
+	font-size: 2.2em;
+	font-weight: 600;
+}
 
-      /* Stili per i gruppi di input (label + input/textarea) */
-      .form-group {
-        margin-bottom: 20px;
-      }
+/* Stili per i gruppi di input (label + input/textarea) */
+.form-group {
+	margin-bottom: 20px;
+}
 
-      /* Stili per le label */
-      .form-group label {
-        display: block;
-        margin-bottom: 8px;
-        color: #555555;
-        font-weight: 500;
-        font-size: 0.95em;
-      }
+/* Stili per le label */
+.form-group label {
+	display: block;
+	margin-bottom: 8px;
+	color: #555555;
+	font-weight: 500;
+	font-size: 0.95em;
+}
 
-      /* Stili per gli input di testo, email, password e textarea */
-      .form-group input[type="text"],
-      .form-group input[type="email"],
-      .form-group input[type="password"],
-      .form-group textarea {
-        width: 100%;
-        padding: 12px 15px;
-        border: 1px solid #cccccc;
-        border-radius: 8px;
-        font-size: 1em;
-        color: #333333;
-        transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        box-sizing: border-box; /* Importante per width: 100% con padding */
-      }
+/* Stili per gli input di testo, email, password e textarea */
+.form-group input[type="text"], .form-group input[type="email"],
+	.form-group input[type="password"], .form-group textarea {
+	width: 100%;
+	padding: 12px 15px;
+	border: 1px solid #cccccc;
+	border-radius: 8px;
+	font-size: 1em;
+	color: #333333;
+	transition: border-color 0.3s ease, box-shadow 0.3s ease;
+	box-sizing: border-box; /* Importante per width: 100% con padding */
+}
 
-      .form-group input:focus,
-      .form-group textarea:focus {
-        border-color: #007bff; /* Colore del bordo al focus */
-        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Ombra al focus */
-        outline: none; /* Rimuove l'outline predefinito del browser */
-      }
+.form-group input:focus, .form-group textarea:focus {
+	border-color: #007bff; /* Colore del bordo al focus */
+	box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Ombra al focus */
+	outline: none; /* Rimuove l'outline predefinito del browser */
+}
 
-      .form-group textarea {
-        resize: vertical; /* Permette il ridimensionamento solo verticale */
-        min-height: 100px;
-      }
+.form-group textarea {
+	resize: vertical; /* Permette il ridimensionamento solo verticale */
+	min-height: 100px;
+}
 
-      /* Stili per il pulsante di submit */
-      .form-group button {
-        width: 100%;
-        padding: 15px 20px;
-        background-color: #007bff;
-        color: white;
-        border: none;
-        border-radius: 8px;
-        font-size: 1.1em;
-        font-weight: 600;
-        cursor: pointer;
-        transition: background-color 0.3s ease, transform 0.2s ease;
-        letter-spacing: 0.5px;
-      }
+/* Stili per il pulsante di submit */
+.form-group button {
+	width: 100%;
+	padding: 15px 20px;
+	background-color: #007bff;
+	color: white;
+	border: none;
+	border-radius: 8px;
+	font-size: 1.1em;
+	font-weight: 600;
+	cursor: pointer;
+	transition: background-color 0.3s ease, transform 0.2s ease;
+	letter-spacing: 0.5px;
+}
 
-      .form-group button:hover {
-        background-color: #0056b3; /* Colore più scuro al hover */
-        transform: translateY(-2px); /* Leggero sollevamento al hover */
-      }
+.form-group button:hover {
+	background-color: #0056b3; /* Colore più scuro al hover */
+	transform: translateY(-2px); /* Leggero sollevamento al hover */
+}
 
-      .form-group button:active {
-        transform: translateY(0); /* Ritorna alla posizione normale al click */
-      }
-    </style>
-  </head>
-  <body>
-    <div class="form-container">     
-      <h2>Contattami</h2>
-      
-      <form action="/recu" method="post">
-      
-        <div class="form-group">
-          <label for="name">Surnome:</label>
-          <input type="text" name="nome" placeholder="nome" />
-        </div>
+.form-group button:active {
+	transform: translateY(0); /* Ritorna alla posizione normale al click */
+}
+</style>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 
-        <div class="form-group">
-          <label >cognome:</label>
-          <input type="text" name="cognome" placeholder="cognome" />
-        </div>
+</head>
+<body>
 
-        <div class="form-group">
-          <label >CF:</label>
-          <input type="text" name="cf" placeholder="cf" />
-        </div>
 
-        <div class="form-group">
-          <button type="submit">Invia Messaggio</button>
-        </div>
-      </form>
-      
-    </div>
-  </body>
+	<!--  navbar  -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="/home">Home</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarNav" aria-controls="navbarNav"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item active"><a class="nav-link" href="/form">form
+						<span class="sr-only">(current)</span>
+				</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="/readAllProdotti">Prodotti</a></li>
+			</ul>
+		</div>
+	</nav>
+	<!-- NAV END -->
+
+	<form action="/saveProdotto" method="post">
+
+		<div class="form-group">
+			<label for="name">Nome Prodotto:</label> <input type="text"
+				id="ubputNomeProdotto" name="nome" placeholder="nome" />
+		</div>
+
+		<div class="form-group">
+			<label>Data Produtzione:</label> <input type="date"
+				id="inputDataProduzione" name="data" />
+		</div>
+
+		<div class="form-group">
+			<label>Prezzo:</label> <input type="text" id="inputPrezzoProdotto"
+				name="prezzo" placeholder="123.43" />
+		</div>
+
+		<div class="form-group">
+			<label>Quantità: </label> <input type="text"
+				id="inputQuantitaProdotto" name="quantita" placeholder="12" />
+		</div>
+
+		<div class="form-group">
+			<label>Descrizione: </label>
+			<textarea name="descrizione" rows="4" cols="100"></textarea>
+		</div>
+		<div class="form-group">
+			<label>Marhce</label> <select name="idMarca">
+				<option value="">scegli...</option>
+				<option value="1">Nike</option>
+				<option value="2">Adidas</option>
+				<option value="3">Mortebianca</option>
+			</select>
+		</div>
+
+		<div class="form-group">
+			<label>Cate-Gore-ia</label> <select name="idCategoria">
+				<option value="">scegli...</option>
+				<option value="1">Alfredo</option>
+				<option value="2">Nuoto</option>
+				<option value="3">Sadomasso</option>
+
+			</select>
+		</div>
+
+		<div class="form-group">
+			<button type="submit">Invia Messaggio</button>
+		</div>
+
+	</form>
+
+
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>

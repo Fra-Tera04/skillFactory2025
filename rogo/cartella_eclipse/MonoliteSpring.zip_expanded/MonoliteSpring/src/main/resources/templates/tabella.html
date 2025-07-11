@@ -1,29 +1,67 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Insert title here</title>
-	</head>
-	<body>
-	
-		<table border="1">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Insert title here</title>
+
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+</head>
+<body>
+
+
+	<!-- navbar -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="/home">Home</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarNav" aria-controls="navbarNav"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item active"><a class="nav-link" href="/form">form
+						<span class="sr-only">(current)</span>
+				</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="/readAllProdotti">Prodotti</a></li>
+			</ul>
+		</div>
+	</nav>
+	<!-- NAV END -->
+
+
+	<table class="table table-dark table-striped">
+		<thead>
 			<tr>
-				<th>ID</th>
-				<th>Nome</th>
-				<th>Cognome</th>
-				<th>Codice Fiscale</th>
+				<th scope="col">ID</th>
+				<th scope="col">Prodotto</th>
+				<th scope="col">Data Produzione</th>
+				<th scope="col">Prexxo</th>
+				<th scope="col">Quantità</th>
+				<th scope="col">Marca</th>
+				<th scope="col">Categoria</th>
 			</tr>
-			<tr th:each="utente : ${utenti}">
-				<td th:text="${utente.id}" />
-				<td th:text="${utente.cf}" />
-				<td th:text="${utente.nome}" />
-				<td th:text="${utente.cognome}" />
+		</thead>
+		<tbody>
+			<tr th:each="prodotto:${prodotti}">
+				<td th:text="${prodotto.id}"></td>
+				<td th:text="${prodotto.nome}"></td>
+				<td th:text="${#dates.format(prodotto.data,'dd/MM/yyyy')}"></td>
+				<td th:text="${prodotto.prezzo}"></td>
+				<td th:text="${prodotto.quantita}"></td>
+				<td th:text="${prodotto.marca.nome}"></td>
+				<td th:text="${prodotto.categoria.nome}"></td>
+				<td><a th:href="@{/deleteProdotto(id=${prodotto.id})}"><button type="button" class="btn btn-danger">Elimina</button></a></td>
 			</tr>
-		</table>
-	
-		<p>
-			Tonra alla <a href="/home">Home</a>
-		</p>
-	</body>
+		</tbody>
+	</table>
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>

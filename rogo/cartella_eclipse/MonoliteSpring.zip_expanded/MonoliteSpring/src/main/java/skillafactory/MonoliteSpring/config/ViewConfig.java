@@ -14,5 +14,7 @@ public class ViewConfig implements WebMvcConfigurer {
 		registry.addViewController("/home").setViewName("home");
 		registry.addViewController("/form").setViewName("form");
 		registry.addViewController("/tabella").setViewName("tabella");
+		
+		// path to page
 	}
 }

@@ -27,3 +27,9 @@
 Controller, in/out return "pagina".html
 
 ViewController, map "/.." to "pagina".html
+
+il main fa partire tomcat e il programma.
+si attiva il percorso html.
+c'è l'html che ha un link verso una pagina html o un metodo java.
+ci deve essere un ViewCOntroller che mappa le "/.." to "pagina".html
+in un
