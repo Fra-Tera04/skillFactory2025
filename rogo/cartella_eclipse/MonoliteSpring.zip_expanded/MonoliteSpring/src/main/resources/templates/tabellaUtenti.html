@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tabella Utenti</title>
+
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+</head>
+<body>
+
+
+		<!-- navbar -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="/home">Home</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarNav" aria-controls="navbarNav"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link" href="/readAllUtenti">Utenti</a></li>
+				<li class="nav-item"><a class="nav-link" href="/formUtenti">Inserisci
+						Utente </a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="/readAllProdotti">Prodotti</a></li>
+				<li class="nav-item"><a class="nav-link" href="/formProdotti">Inserisci
+						Prodotti</a></li>
+			</ul>
+		</div>
+	</nav>
+	<!-- NAV END -->
+
+
+	<table class="table table-dark table-striped">
+		<thead>
+			<tr>
+				<th scope="col">ID</th>
+				<th scope="col">Nome</th>
+				<th scope="col">Cognome</th>
+				<th scope="col">Codice Fiscale</th>
+				<th scope="col">Data Di Nascita</th>
+				<th scope="col">Username</th>
+				<th scope="col">Email</th>
+				<th scope="col">Ruolo</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="utente:${utenti}">
+				<td th:text="${utente.id}"></td>
+				<td th:text="${utente.nome}"></td>
+				<td th:text="${utente.cognome}"></td>
+				<td th:text="${utente.cf}"></td>
+				<td th:text="${#dates.format(utente.data,'dd/MM/yyyy')}"></td>
+				<td th:text="${utente.username}"></td>
+				<td th:text="${utente.ruolo.nome}"></td>
+				<td><a th:href="@{/deleteUtente(id=${utente.id})}"><button
+							type="button" class="btn btn-danger">Elimina</button></a></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

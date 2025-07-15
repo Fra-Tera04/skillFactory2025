@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import skillafactory.MonoliteSpring.model.Utente;
 
 @Repository
-public interface RepoMySQL extends JpaRepository<Utente, Integer> {
+public interface IRepoUtente extends JpaRepository<Utente, Integer> {
 
 }

@@ -14,18 +14,20 @@ import org.springframework.web.bind.annotation.RequestParam;
 import skillafactory.MonoliteSpring.model.Categoria;
 import skillafactory.MonoliteSpring.model.Marca;
 import skillafactory.MonoliteSpring.model.Prodotto;
+import skillafactory.MonoliteSpring.model.Ruolo;
 import skillafactory.MonoliteSpring.model.Utente;
 import skillafactory.MonoliteSpring.repository.IRepoCategorie;
 import skillafactory.MonoliteSpring.repository.IRepoMarche;
 import skillafactory.MonoliteSpring.repository.IRepoProdotti;
-import skillafactory.MonoliteSpring.repository.RepoMySQL;
+import skillafactory.MonoliteSpring.repository.IRepoRuolo;
+import skillafactory.MonoliteSpring.repository.IRepoUtente;
 
 
 @Controller
 public class GestoreRichieste {
 
 	@Autowired
-	RepoMySQL repoU;
+	IRepoUtente repoU;
 
 	@Autowired
 	IRepoProdotti repoProdotto;
@@ -36,46 +38,51 @@ public class GestoreRichieste {
 	@Autowired
 	IRepoCategorie repoCategoria;
 
+	@Autowired
+	IRepoRuolo repoRuolo;
 
-
-	@PostMapping("/rec")
-	public String registrati(@RequestParam String surname, String email)
-	{		
-		System.out.println("nome: " + surname+ "\nemail: " + email+"\nArrivati\n");	
-		return "/home";
-	}
-
-	@PostMapping("/recu")
-	public String recU(Utente u)
+	@PostMapping("/saveUtente")
+	public String saveUtente(Utente u, @RequestParam int idRuolo)
 	{	
+		try {
+			controlliSaveUtente(u, idRuolo);
 
-		repoU.save(u);
+			Ruolo r = repoRuolo.findById(idRuolo).get();
+			u.setRuolo(r);
+
+			repoU.save(u);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 		return "/home";
 	}
-
-	@DeleteMapping("/deleteu")
-	public String deleteU(@RequestParam int id)
-	{
-		repoU.deleteById(id);
-		return "/home";
-	}
-
-	@GetMapping("readallu")
-	public String readAllU(Model model)
+	@GetMapping("/readAllUtenti")
+	public String readAllUtenti(Model model)
 	{
 		model.addAttribute("utenti", repoU.findAll());
 
-		return "/tabella"; //repoU.findAll();
+		return "/tabellaUtenti";
 	}
-
-	@GetMapping("readu")
-	public Optional<Utente> readOneU(@RequestParam int id)
+	@GetMapping("/deleteUtente")
+	public String deleteUtente(@RequestParam int id)
 	{
-		return repoU.findById(id);
+		try {
+			
+			repoU.deleteById(id);
+			
+		} catch (Exception e) {
+			e.printStackTrace();		
+		}
+		return "readAllUtenti";
 	}
-
-
+	private void controlliSaveUtente(Utente u, int idRuolo) {
+		
+	}
+	
+	// Prodotti -------------------------------------------
+	
 	@PostMapping("/saveProdotto")
 	public String saveProdotto(Prodotto p, @RequestParam int idMarca, int idCategoria)
 	{	
@@ -94,17 +101,14 @@ public class GestoreRichieste {
 
 		repoProdotto.save(p);
 		return "/home";
-	}
-
-
+	}	
 	@GetMapping("/readAllProdotti")
 	public String readAllProdotti(Model model)
 	{
 		model.addAttribute("prodotti", repoProdotto.findAll());
 
-		return "/tabella"; //repoU.findAll();
+		return "/tabellaProdotti"; //repoU.findAll();
 	}
-
 	@GetMapping("/deleteProdotto")
 	public String deleteProdotto(@RequestParam int id)
 	{
@@ -115,8 +119,6 @@ public class GestoreRichieste {
 		}
 		return "readAllProdotti";
 	}
-
-
 	private void controlliSaveProdotto(Prodotto p, int idMarca, int idCategoria)
 	{
 

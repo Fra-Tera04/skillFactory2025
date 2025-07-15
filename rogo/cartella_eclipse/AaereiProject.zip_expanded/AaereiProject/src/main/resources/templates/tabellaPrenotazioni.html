@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+
+<title>Insert title here</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar bg-dark navbar-expand-lg border-bottom border-body" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Aeroplanni</a>
+    <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>-->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/readAllPrenotazioniVoli">Tabella Prenotazioni</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="readAllAccountAzinedali">Tabella Account</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+	<!-- tabella -->
+
+	<table class="table tabel-striped">
+		<thead>
+			<tr>
+				<th scope="col">#ID</th>
+				<th scope="col">Codice Prenotazione</th>
+				<th scope="col">Compagnia</th>
+				<th scope="col">Partenza</th>
+				<th scope="col">Arrivo</th>
+				<th scope="col">Data Partenza</th>
+				<th scope="col">Data Arrivo</th>
+				<th scope="col">Numero Passeggeri</th>
+				<th scope="col">Prezzo</th>
+				<th scope="col">sos</th>
+			</tr>
+		</thead>
+		<tbody>
+
+			<tr th:each="prenotazione:${prenotazioni}">
+				<td th:text="${prenotazione.id}"></td>
+				<td th:text="${prenotazione.codicePrenotazione}"></td>
+				<td th:text="${prenotazione.compagnia}"></td>
+				<td th:text="${prenotazione.partenza}"></td>
+				<td th:text="${prenotazione.arrivo}"></td>
+				<td th:text="${prenotazione.dataPartenza}"></td>
+				<td th:text="${prenotazione.dataArrivo}"></td>
+				<td th:text="${prenotazione.nPasseggeri}"></td>
+				<td th:text="${prenotazione.prezzo}"></td>
+				<td><a th:href="@{/deletePrenotazione(id=${prenotazione.id})}">
+						<button type="button" class="btn btn-danger">Elimina</button>
+				</a></td>
+			</tr>
+
+		</tbody>
+	</table>
+
+	<!-- tabella -->
+
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
