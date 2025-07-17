@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+
+
+</head>
+<body>
+
+
+	<nav class="navbar bg-dark navbar-expand-lg border-bottom border-body"
+		data-bs-theme="dark">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">Aeroplanni</a>
+			<!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>-->
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item"><a class="nav-link active"
+						aria-current="page" href="/">Home</a></li>
+					<li class="nav-item"><a class="nav-link"
+						href="/readAllPrenotazioniVoli">Tabella Prenotazioni</a></li>
+					<li class="nav-item dropdown"><a class="nav-link"
+						href="readAllAccountAzinedali">Tabella Account</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+
+	<form action="/savePrenotazioneVolo" method="post">
+		<div class="mb-3">
+			<label for="exampleInputEmail1" class="form-label">Codice
+				Prenotazione</label> <input type="email" class="form-control">
+		</div>
+		<div class="mb-3">
+			<label for="exampleInputEmail1" class="form-label">Arrivo </label> <input
+				type="text" class="form-control">
+		</div>
+		<div class="mb-3">
+			<label for="exampleInputEmail1" class="form-label"> partenza
+			</label> <input type="text" class="form-control">
+
+		</div>
+		<div class="mb-3">
+			<label for="exampleInputEmail1" class="form-label">data
+				partenza </label> <input type="date" class="form-control">
+
+		</div>
+		<div class="mb-3">
+			<label for="exampleInputEmail1" class="form-label"> data
+				arrivo </label> <input type="date" class="form-control">
+
+		</div>
+		<div class="mb-3">
+			<label for="exampleInputEmail1" class="form-label">Compagnia
+			</label> <input type="text" class="form-control">
+
+		</div>
+		<div class="mb-3">
+			<label for="exampleInputEmail1" class="form-label">Numero
+				Passeggeri </label> <input type="text" class="form-control">
+
+		</div>
+		<div class="mb-3">
+			<label for="exampleInputEmail1" class="form-label"> Prezzo </label> <input
+				type="text" class="form-control">
+		</div>
+
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+
+
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
