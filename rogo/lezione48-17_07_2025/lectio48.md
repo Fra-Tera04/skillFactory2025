@@ -5,7 +5,7 @@
 1. [Framework](#cosè-un-framework)
    1. [Spring](#spring)
    2. [Hibernate](#hibernate)
-   3. [Mavev](#maven)
+   3. [Maven](#maven)
 2. [Dipendenze](#dipendenze)
 
 ## Cos'è un Framework
@@ -31,20 +31,43 @@ Ogni modulo pom ha due Cooredinate chiave che sono:
 
 ## Dipendenze
 
-- Spring Web: modulo per la gestione (invio/ricezione) di richieste HTTP
+### Spring Web
 
-  Le risposte Http variano in base al Content/Type che possono essere di tipo
+modulo per la gestione (invio/ricezione) di richieste HTTP
 
-  1. text/html &rarr; formati .html
-  2. image/jpeg &rarr; formati di immagini
-  3. audio/mp3 &rarr; formati audio
-  4. video/mp4 &rarr; formati video
+Le risposte Http variano in base al Content/Type che possono essere di tipo
 
-- Lombok: modulo per evitare codice boilerpalte
-- Spring Data JPA: modulo per mappare oggetti Java con tabelle relazionali ( tra cui: hibernate, SpringORM, SpringDAO)
-- Hibenrate: è una implementazione di Data JPA
-- MySQL Driver
-- Thymelife: un tamplate engine che aggiunge attributi compatibili con html identificati dal prefisso th e sec.
-- Spring Security: un modulo per la sicurezza riguardo l'autenticazione e l'autorizzazione di alcune risorse.
-- Jasypt: per la criptazione e decriptazione delle password
-- Spring Boot: un'estenzione di Spring che automatiza e semplifica le configurazioni Spring ( beans.xml )
+1. text/html &rarr; formati .html
+2. image/jpeg &rarr; formati di immagini
+3. audio/mp3 &rarr; formati audio
+4. video/mp4 &rarr; formati video
+
+### Lombok
+
+modulo per evitare codice boilerpalte
+
+### Spring Data JPA
+
+modulo per mappare oggetti Java con tabelle relazionali ( tra cui: hibernate, SpringORM, SpringDAO)
+
+### Hibenrate
+
+è una implementazione di Data JPA
+
+### MySQL Driver
+
+### Thymelife
+
+un tamplate engine che aggiunge attributi compatibili con html identificati dal prefisso th e sec.
+
+### Spring Security
+
+un modulo per la sicurezza riguardo l'autenticazione e l'autorizzazione di alcune risorse.
+
+### Jasypt
+
+per la criptazione e decriptazione delle password
+
+### Spring Boot
+
+un'estenzione di Spring che automatiza e semplifica le configurazioni Spring ( beans.xml )
