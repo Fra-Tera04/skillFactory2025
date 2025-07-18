@@ -1,6 +1,6 @@
-# Appunti, progetti e cose utili riguardo il corso da Skill Factory 2025
+# Appunti e Progetti Riguardo Il Corso da Skill Factory 2025
 
-Ecco la mia cartella con le lezioni divise per giornata, seguite presso l'azienda di formazione [_Skill Factory_](https://www.skillfactory.it/), del corso di Programmazione per Full Stack Developer con una certificazione _EQF5_.
+## La mia Raccolta di Progetti attraverso le 48 lezioni divise per giornata seguite presso l'azienda di formazione [_Skill Factory_](https://www.skillfactory.it/), del corso di Programmazione con certificazione _EQF5_.
 
 Il corso segue una fase di **Formazione** e una di **Tirocinio**.
 
@@ -10,13 +10,16 @@ Il corso segue una fase di **Formazione** e una di **Tirocinio**.
 
     1. Schemi di Control Flow
     2. Basi della programmazione tramite Python 3, Node.js, Java
-    3. Sviluppo di pagine web HTML-CSS con introduzione a Bootstrap
+    3. Sviluppo di pagine web HTML-CSS con introduzione a Bootstrap 3 e 5
 
   - Con **Esercitazioni** tramite laboratori per testare e consolidare le competenze acquisite.
 
-    - Le erciatazioni sono svolte tramite la creazione di gestionali
+    - Le erciatazioni sono svolte tramite la creazione di Progetti Gestionali
 
 - **Il Tirocinio** si concentra su:
+  1. La Realizzazione di un Applicazione Gestionale a Microservizi in Spring Boot.
+  2. La Realizzazione di un Applicazione Gestionale Monolitica Spring mediante il Pattern MVC.
+  3. L'Aggiunta dei moduli Spring WEB, Thymelife, JPA, Hibernate e Security.
 
 ---
 
@@ -27,12 +30,7 @@ Il corso segue una fase di **Formazione** e una di **Tirocinio**.
 ![Spring Boot](https://img.shields.io/badge/SpringBoot-darkblue)
 ![Spring Data](https://img.shields.io/badge/SpringData-darkblue)
 
-, Spring Data JPA, H2/PostgreSQL, Spring Security, JWT
-
-- Istruzioni chiare su come configurare, compilare ed eseguire l'applicazione localmente.
-
-- Esempi di richieste API (es. con curl o Postman/Insomnia Collection).
-
 - Screenshot (se c'è una UI, anche semplice).
+- link to video etc.
 
 -->
